@@ -5,8 +5,8 @@ resolver = "3"
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.93.1"
-homepage = "https://github.com/DenisGorbachev/rust-pre-public-lib-template"
-repository = "https://github.com/DenisGorbachev/rust-pre-public-lib-template"
+homepage = "https://github.com/DenisGorbachev/retry-please"
+repository = "https://github.com/DenisGorbachev/retry-please"
 keywords = []
 categories = []
 exclude = [
@@ -33,8 +33,8 @@ exclude = [
 ]
 
 [workspace.metadata.details]
-name = "rust-pre-public-lib-template"
-title = "Rust pre-public lib template"
+name = "retry-please"
+title = ""
 readme = { generate = false }
 
 [workspace.lints.rust]
@@ -48,11 +48,10 @@ absolute_paths = "deny"
 arithmetic_side_effects = "deny"
 
 [package]
-name = "rust-pre-public-lib-template"
+name = "retry-please"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-description = "A template for creating Rust pre-public libs."
 homepage.workspace = true
 repository.workspace = true
 keywords.workspace = true
@@ -60,7 +59,7 @@ categories.workspace = true
 exclude.workspace = true
 
 [package.metadata.details]
-title = "Rust pre-public lib template"
+title = ""
 
 [lints]
 workspace = true
@@ -70,8 +69,8 @@ derive-getters = { version = "0.5.0", features = ["auto_copy_getters"] }
 derive-new = "0.7.0"
 derive_more = { version = "2.1.1", features = ["full"] }
 errgonomic = { git = "https://github.com/DenisGorbachev/errgonomic" }
-itertools = "0.14.0"
+itertools = "0.15.0"
 standard-traits = { git = "https://github.com/DenisGorbachev/standard-traits" }
-strum = { version = "0.27.2", features = ["derive"] }
-stub-macro = { version = "0.2.1" }
+strum = { version = "0.28.0", features = ["derive"] }
+stub-macro = { version = "0.3.1" }
 subtype = { git = "https://github.com/DenisGorbachev/subtype" }
