@@ -516,13 +516,6 @@ Examples:
 
 A package that has a remote whose name contains `public` or `pre-public` and ends with `template`.
 
-### Guidelines for `subtype`
-
-- Define newtypes as ordinary structs with explicit `From` / `TryFrom` impls.
-- The macro calls that begin with `subtype` (for example, `subtype!` and `subtype_string!`) are legacy APIs that expand to newtypes.
-  - Don't use them in new code because their checker and preprocessor concepts have been superseded by explicit conversion impls.
-- Use the `SerializeTransparent` derive for a refined newtype that must serialize identically to its inner field while using Serde's `try_from` container attribute for validated deserialization.
-
 ### Error handling
 
 #### Principle
@@ -2178,10 +2171,13 @@ git-fetch-with-cli = true
 [workspace]
 resolver = "3"
 
+[workspace.dependencies]
+thiserror = "2.0.0"
+
 [workspace.package]
 version = "0.1.0"
 edition = "2024"
-rust-version = "1.93.1"
+rust-version = "1.88.0"
 homepage = "https://github.com/DenisGorbachev/retry-please"
 repository = "https://github.com/DenisGorbachev/retry-please"
 keywords = []
@@ -2242,19 +2238,14 @@ title = ""
 workspace = true
 
 [dependencies]
-derive-getters = { version = "0.5.0", features = ["auto_copy_getters"] }
-derive-new = "0.7.0"
-derive_more = { version = "2.1.1", features = ["full"] }
-errgonomic = { git = "https://github.com/DenisGorbachev/errgonomic" }
-itertools = "0.15.0"
-standard-traits = { git = "https://github.com/DenisGorbachev/standard-traits" }
-strum = { version = "0.28.0", features = ["derive"] }
-stub-macro = { version = "0.3.1" }
-subtype = { git = "https://github.com/DenisGorbachev/subtype" }
+errgonomic = { git = "https://github.com/DenisGorbachev/errgonomic", default-features = false }
+thiserror.workspace = true
 ```
 
 ### src/lib.rs
 
 ```rust
-//! This is a module-level comment for a Rust lib
+mod functions;
+
+pub use functions::*;
 ```
