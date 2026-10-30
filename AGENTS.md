@@ -2173,6 +2173,7 @@ resolver = "3"
 
 [workspace.dependencies]
 thiserror = "2.0.0"
+tokio = { version = "1.46.0", features = ["time"] }
 
 [workspace.package]
 version = "0.1.0"
@@ -2240,6 +2241,7 @@ workspace = true
 [dependencies]
 errgonomic = { git = "https://github.com/DenisGorbachev/errgonomic", default-features = false }
 thiserror.workspace = true
+tokio = { workspace = true, optional = true }
 ```
 
 ### src/lib.rs
@@ -2248,4 +2250,10 @@ thiserror.workspace = true
 mod functions;
 
 pub use functions::*;
+
+#[cfg(feature = "tokio")]
+mod types;
+
+#[cfg(feature = "tokio")]
+pub use types::*;
 ```
