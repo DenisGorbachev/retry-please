@@ -2172,6 +2172,7 @@ git-fetch-with-cli = true
 resolver = "3"
 
 [workspace.dependencies]
+progenitor-client = "0.14.0"
 thiserror = "2.0.0"
 tokio = { version = "1.46.0", features = ["time"] }
 
@@ -2240,6 +2241,7 @@ workspace = true
 
 [dependencies]
 errgonomic = { git = "https://github.com/DenisGorbachev/errgonomic", default-features = false }
+progenitor-client = { workspace = true, optional = true }
 thiserror.workspace = true
 tokio = { workspace = true, optional = true }
 ```
@@ -2256,4 +2258,7 @@ mod types;
 
 #[cfg(feature = "tokio")]
 pub use types::*;
+
+mod is_retryable;
+pub use is_retryable::*;
 ```
