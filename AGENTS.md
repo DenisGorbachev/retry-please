@@ -1417,7 +1417,6 @@ tokio = { version = "1.46.0", features = ["time"] }
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.93.1"
-homepage = "https://github.com/DenisGorbachev/retry-please"
 repository = "https://github.com/DenisGorbachev/retry-please"
 keywords = []
 categories = []
@@ -1466,7 +1465,6 @@ name = "retry-please"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
-homepage.workspace = true
 repository.workspace = true
 keywords.workspace = true
 categories.workspace = true
