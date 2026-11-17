@@ -1408,6 +1408,7 @@ age = { type = "age", recipients = [
 resolver = "3"
 
 [workspace.dependencies]
+errgonomic = { version = "0.6.0", default-features = false }
 progenitor-client = "0.14.0"
 thiserror = "2.0.0"
 tokio = { version = "1.46.0", features = ["time"] }
@@ -1448,7 +1449,10 @@ exclude = [
 [workspace.metadata.details]
 name = "retry-please"
 title = ""
-readme = { generate = false }
+readme = { generate = true }
+
+[workspace.lints.cargo]
+unused_dependencies = "deny"
 
 [workspace.lints.rust]
 redundant_imports = "deny"
@@ -1476,12 +1480,13 @@ exclude.workspace = true
 
 [package.metadata.details]
 title = ""
+readme = { generate = true }
 
 [lints]
 workspace = true
 
 [dependencies]
-errgonomic = { git = "https://github.com/DenisGorbachev/errgonomic", default-features = false }
+errgonomic.workspace = true
 progenitor-client = { workspace = true, optional = true }
 thiserror.workspace = true
 tokio = { workspace = true, optional = true }

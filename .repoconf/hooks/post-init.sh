@@ -25,7 +25,7 @@ fnox_toml="$dir/fnox.toml"
     repo_name=$(mise run git:repo-name)
   fi
 
-  rm -f README.md LICENSE-APACHE LICENSE-MIT
+  rm -f README.md
 
   mise run fix:name "$repo_name"
   cargo metadata --manifest-path "$cargo_toml" --format-version 1 --no-deps |
