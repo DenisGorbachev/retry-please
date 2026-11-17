@@ -1416,9 +1416,10 @@ tokio = { version = "1.46.0", features = ["time"] }
 version = "0.1.0"
 edition = "2024"
 rust-version = "1.93.1"
+license = "Apache-2.0 OR MIT"
 repository = "https://github.com/DenisGorbachev/retry-please"
-keywords = []
-categories = []
+keywords = ["retry", "async", "error-handling"]
+categories = ["asynchronous"]
 exclude = [
     ".*",
     "*.local.*",
@@ -1466,6 +1467,8 @@ name = "retry-please"
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
+description = "Asynchronous retries with caller-defined error handling and optional fixed delays."
+license.workspace = true
 repository.workspace = true
 keywords.workspace = true
 categories.workspace = true
