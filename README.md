@@ -5,6 +5,7 @@
 # retry-please
 
 [![Build](https://github.com/DenisGorbachev/retry-please/actions/workflows/ci.yml/badge.svg)](https://github.com/DenisGorbachev/retry-please)
+[![Documentation](https://docs.rs/retry-please/badge.svg)](https://docs.rs/retry-please)
 
 <!-- crate documentation start -->
 Asynchronous retries with caller-defined error handling.
